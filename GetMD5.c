@@ -646,7 +646,7 @@ void ArrayCore(MD5_CTX *context, const mxArray *V)
         }
                 
         // Call the M-helper function to be more flexible:
-        ok = mexCallMATLAB(1, Arg, 1, &V, "GetMD5_helper");
+        ok = mexCallMATLAB(1, Arg, 1, &V, "GetMD5.GetMD5_helper");
         if (ok != 0) {
            ERROR("HelperFailed", "Calling GetMD5_helper failed.");
         }
