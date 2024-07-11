@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ["R2016b"]
+        version: ["R2022a"]
         os: ["ubuntu-latest", "macos-latest", "windows-latest"]
     runs-on: ${{matrix.os}}
     steps:
@@ -26,7 +26,7 @@ jobs:
       #   with:
       #     command: addpath(pwd); results = runtests('tests'), assertSuccess(results);
       - name: Compile MEX file
-        run: mex jsonread.c jsmn.c -DJSMN_PARENT_LINKS
+        run: mex -R2016b GetMD5.c
       # - name: Run tests with newly compiled MEX files
       #   uses: matlab-actions/run-command@v1
       #   with:
